@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Sta nascendo la nostra mascotte</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html, body {
+      height: 100%;
+      background-color: #000;
+      font-family: sans-serif;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .text {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      text-align: center;
+      max-width: 90%;
+    }
+    .media-container {
+      max-width: 90vw;
+      max-height: 90vh;
+    }
+    .media-container img,
+    .media-container video {
+      display: none;
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="text">
+    Sta nascendo la nostra nuova mascotte,<br>
+    rimani collegato per nuove informazioni!
+  </div>
+
+  <div class="media-container">
+    <img id="img" src="immagine.jpg" alt="immagine iniziale">
+    <video id="video1" src="video1.mp4"></video>
+    <video id="video2" src="video2.mp4" loop muted></video>
+  </div>
+
+  <script>
+    const img = document.getElementById('img');
+    const video1 = document.getElementById('video1');
+    const video2 = document.getElementById('video2');
+
+    img.style.display = 'block';
+
+    setTimeout(() => {
+      img.style.display = 'none';
+      video1.style.display = 'block';
+      video1.play();
+
+      setTimeout(() => {
+        video1.style.display = 'none';
+        video2.style.display = 'block';
+        video2.play();
+      }, 4000);
+    }, 4000);
+  </script>
+</body>
+</html>
