@@ -28,46 +28,24 @@
     .media-container {
       max-width: 90vw;
       max-height: 90vh;
+      display: flex;
+      justify-content: center;
     }
-    .media-container img,
-    .media-container video {
-      display: none;
-      max-width: 100%;
-      max-height: 100%;
+    .media-container img {
+      height: 300px; /* Altezza fissa per tutte le immagini e GIF */
+      object-fit: contain; /* Mantiene le proporzioni senza distorcere */
       border-radius: 20px;
     }
   </style>
 </head>
 <body>
   <div class="text">
-    Sta nascendo la nostra nuova mascotte,<br>
-    rimani collegato per nuove informazioni!
+    Dall'uovo sembra nata una strana creautura<br>
+    Abbiamo il piacere di presentarti la nostra mascotte!
   </div>
 
   <div class="media-container">
-    <img id="img" src="immagine.jpg" alt="immagine iniziale">
-    <video id="video1" src="video1.mp4"></video>
-    <video id="video2" src="video2.mp4" loop muted></video>
+    <img id="img" src="images/mascotte.gif" alt="immagine iniziale">
   </div>
-
-  <script>
-    const img = document.getElementById('img');
-    const video1 = document.getElementById('video1');
-    const video2 = document.getElementById('video2');
-
-    img.style.display = 'block';
-
-    setTimeout(() => {
-      img.style.display = 'none';
-      video1.style.display = 'block';
-      video1.play();
-
-      setTimeout(() => {
-        video1.style.display = 'none';
-        video2.style.display = 'block';
-        video2.play();
-      }, 4000);
-    }, 4000);
-  </script>
 </body>
 </html>
